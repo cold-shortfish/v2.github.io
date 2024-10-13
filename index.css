@@ -1,0 +1,502 @@
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+:root {
+    --butter: rgb(252, 245, 201);
+    --lt: rgb(170, 170, 170); 
+    --med: rgb(83, 83, 83);
+    --dk: rgb(29, 29, 29);
+    --aubergine: #170609; 
+    --scrollbar-width: 5px;
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar { /* width */
+    width: var(--scrollbar-width);
+  }
+  ::-webkit-scrollbar-track { /* Track */
+    /* background: url(./test/test.svg) no-repeat; */
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb { /* Handle */
+    background: var(--med);
+    /* border-radius: 20px; */
+    background-clip: padding-box;
+    /* border: 8px solid transparent; */
+    border-top: 0px solid transparent;
+    border-right: var(--scrollbar-right) solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: var(--scrollbar-left) solid transparent;
+}
+
+
+/* type declaration */
+@font-face {
+    font-family: 'Sometype Mono';
+    font-style: normal;
+    src: url('fonts/Sometype_Mono/SometypeMono-VariableFont_wght.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'Sometype Mono';
+    font-style: italic;
+    src: url('fonts/Sometype_Mono/SometypeMono-Italic-VariableFont_wght.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'B612 Mono';
+    font-style: normal;
+    src: url('fonts/B612_Mono/B612Mono-Regular.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'B612 Mono';
+    font-style: italic;
+    src: url('fonts/B612_Mono/B612Mono-Italic.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('fonts/SpaceGrotesk-VariableFont_wght.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'BOP';
+    src: url(fonts/BOP.woff2);
+}
+
+.name {
+    font-family: "B612 Mono", monospace;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--butter);
+    z-index: 5;
+    text-shadow: 0px 0px 10px white, 0px 0px 2px white;
+}
+.project p {
+    font-family: "Space Grotesk";
+    color: var(--med);
+}
+nav {
+    font-family: "Space Grotesk";
+}
+.filters button {
+    font-family: "B612 Mono";
+    color: white;
+}
+.contact a {
+    color: var(--med);
+    display: block;
+}
+.bop {
+    font-family: "BOP";
+}
+.bop.icon {
+    color: coral;
+    transition: 0.3s ease-in-out;
+}
+.bop.icon:hover {
+    color: rgb(230, 88, 37);
+}
+
+/* glow highlight */
+*::selection {
+    background-color: none;
+    text-shadow: 0px 0px 10px var(--butter), 0px 0px 2px var(--butter);
+}
+
+
+/*background color*/
+.bg-dk {background-color: rgb(29, 29, 29);}
+.bg-aubergine {background-color: var(--aubergine)}
+.bg-butter {background-color: butter;}
+
+
+/* masonry grid */
+.grid {
+    margin: 1rem auto;
+    overflow: hidden;
+}
+.grid-item {
+    position: relative;
+}
+.grid-item img {
+    width: 100%;
+    height: auto;
+}
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+
+/* || filter */
+
+.filter {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+}
+.filter:hover {
+    color: var(--lt);
+}
+.filter.active {
+    /* color: var(--med); */
+    border: 2px solid var(--lt);
+    border-radius: 30px;
+}
+.button-group:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* || nav about contact */
+nav div {
+    display: inline-block;
+}
+.contact {
+    position: fixed;
+    right: 2vw;
+}
+/*align right*/
+.contact.more {
+    margin-left: auto; 
+    margin-right: 0;
+}
+.bringup {
+    background: none;
+    color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    color: var(--butter);
+    z-index: 10;
+}
+.more {
+    display: none;
+    position: absolute;
+    bottom: 5vh;
+    margin: 0;
+    background-color: var(--butter);
+    z-index: 20;
+}
+
+
+/* || mobile */
+@media screen and (max-width: 600px) {
+    .grid {
+        width: 90vw;
+        float: right;
+        margin-top: 8vh;
+    }
+    .grid-item, .grid-sizer {
+        width: 100%;
+    }
+    .grid-item {
+        margin-bottom:5vh;
+        float: right;
+    }
+    .project p {
+        margin-top: .8rem;
+        float: right;
+        margin-right: 1rem;
+    }
+    .name {
+        font-size: 1em; 
+        position: fixed;
+        left: 5vw;
+        top: 3vh;
+    }
+    .filters {
+        display: grid;
+        position: fixed;
+        padding: 40vh 2vw;
+        /*right: 0;
+        justify-items: end;*/
+        justify-items: start;
+        z-index: 10;
+    }
+    .filter {
+        margin-bottom: 1em;
+    }
+    .bringup.about {
+        position: fixed;
+        bottom: 2vh; 
+        left: 3vw;
+    }
+    .contact {
+        bottom: 2vh;
+        margin-right: 1vw;
+    }
+    .more {
+        width: 80vw;
+        border-radius: 6px;
+        opacity: 90%;
+        padding: 2vh;
+        left: 15px;
+        bottom: 5vh;
+        position: fixed;
+    }
+    .contact.more {
+        width: 30%;
+        bottom: 5vh;
+    }
+    .more p,a {
+        color: var(--med);
+        font-size: .9rem;
+        margin-bottom: .8rem;
+    }
+    .bop.icon {
+        font-size: 6rem;
+    }
+    .bop.icon p {
+        font-size: 1rem;
+    }
+}
+/* || desktop */
+@media screen and (min-width: 992px) {
+    .grid {
+        width: 80vw;
+        margin-left: 18vw;
+        margin-top: 6vh;
+    }
+    .grid-item, .grid-sizer {
+        width: 25%;
+    }
+    .grid-item {
+        margin-bottom:10vh;
+    }
+    .project p {
+        margin-top: .8rem;
+    }
+    .name {
+        font-size: 1.4em; 
+        position: fixed;
+        left: 3vw;
+        top: 5vh;
+        rotate: -10deg;
+    }
+    .filters {
+        display: grid;
+        position: fixed;
+        padding: 30vh 2vw;
+        /*right: 0;
+        justify-items: end;*/
+        justify-items: start;
+    }
+    .filter {
+        margin-bottom: .3rem;
+    }
+
+    .bringup.about {
+        position: fixed;
+        bottom: 15px; 
+        left: 2vw;
+    }
+    .contact {
+        bottom: 15px;
+    }
+    .more {
+        position: fixed;
+        width: 40vw;
+        border-radius: 6px;
+        opacity: 90%;
+        line-height: 1.3;
+        padding: 3vh;
+        left: 2vw;
+        bottom: 50px;
+    }
+    .contact.more {
+        width: 10vw;
+    }
+    .more p {
+        color: var(--med);
+        font-size: .9rem;
+        margin-bottom: 1vh;
+    }
+    .more a {
+        font-size: .9rem;
+        margin-bottom: 1vh;
+
+    }
+    .bop.icon {
+        font-size: 5rem;
+    }
+    .bop.icon p {
+        font-size: 1rem;
+    }
+}
+
+
+/* || cover images */
+/* # {
+    width: 100%;
+    padding-top: %;
+    background-image: url(images);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#:hover {
+    background-image: url(images/);
+} */
+
+#levis {
+    width: 100%;
+    padding-top: 150%;
+    background-image: url(images/levis/501\ Feeling\ Cheeky.webp);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#levis:hover {
+    background-image: url(images/levis/501\ Feeling\ Cheeky\ bk.webp);
+}
+
+#ict {
+    width: 100%;
+    padding-top: 121.9%;
+    background-image: url(images/in-case-that/l4-120-2.jpg);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#ict:hover {
+    background-image: url(images/in-case-that/l4-120-1.jpg);
+}
+
+#senior-show {
+    width: 100%;
+    padding-top: 100%;
+    background-image: url(images/senior-show/ss-logo-green.png);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#senior-show:hover {
+    background-image: url(images/senior-show/ss-show-pink.png);
+}
+
+#log {
+    width: 100%;
+    padding-top: 129.4%;
+    background-image: url(images/log/knit\ experiment.png);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#log:hover {
+    background-image: url(images/log/knit\ experiment\ 2.png);
+} 
+
+#litho {
+    width: 100%;
+    padding-top: 200%;
+    background-image: url(images/litho/at-ease-3.jpg);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#litho:hover {
+    background-image: url(images/litho/at-ease-5.jpg);
+}
+
+#eat-together {
+    width: 100%;
+    padding-top: 54.8%;
+    background-image: url(images/eat-together/eat\ together\ index.jpeg);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#eat-together:hover {
+    background-image: url(images/eat-together/eat\ together\ page.jpeg);
+}
+
+#brooch {
+    width: 100%;
+    padding-top: 100%;
+    background-image: url(images/emergency-brooch/brooch-fr.png);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#brooch:hover {
+    background-image: url(images/emergency-brooch/brooch-bk.png);
+}
+
+#on-the-go {
+    width: 100%;
+    padding-top: 150%;
+    background-image: url(images/on-the-go/otg-fr.JPG);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#on-the-go:hover {
+    background-image: url(images/on-the-go/otg-bkpkt.JPG);
+}
+
+#twelve {
+    width: 100%;
+    padding-top: 150%;
+    background-image: url(images/12AM-12PM/12am12pm-knitbk.JPG);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#twelve:hover {
+    background-image: url(images/12AM-12PM/12am12pm-cutsewbk.JPG);
+}
+
+#white-proj {
+    width: 100%;
+    padding-top: 150%;
+    background-image: url(images/white-proj/bw-1.jpeg);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#white-proj:hover {
+    background-image: url(images/white-proj/bw-2.jpeg);
+}
+
+#taste {
+    width: 100%;
+    padding-top: 75%;
+    background-image: url(images/taste/sweet.JPG);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#taste:hover {
+    background-image: url(images/taste/savory.JPG);
+}
+
+#drawing-machine {
+    width: 100%;
+    padding-top: 66.5%;
+    background-image: url(images/drawing-machine/dm-cover.JPG);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#drawing-machine:hover {
+    background-image: url(images/drawing-machine/dm-hover.JPG);
+}
+#rewrite {
+    width: 100%;
+    padding-top: 157.4%;
+    background-image: url(images/rewrite/memory\ 1.jpg);
+    background-size: cover;
+    transition: 0.3s ease-in-out;
+}
+#rewrite:hover {
+    background-image: url(images/rewrite/memory\ 5.jpg);
+}
+
+/* #ss {
+    transition: 0.3s ease-in-out;
+
+}
+#ss:hover {
+    content: url(images/senior-show/ss-show-pink.png);
+    transition: 0.3s ease-in-out;
+} */ 

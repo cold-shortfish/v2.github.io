@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if eyes could taste</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+</head>
+
+<body class="bg-dk"></body>
+    <!--name header-->
+    <a class="name" href="../index.html">liang, aiyu</a>
+
+    <!--proj info-->
+    <div class="proj-info">
+        <h1>if eyes could taste</h1>
+        <h2>2018</h2>
+        <p>An investigation into how the other senses (sight, sound, texture, smell) can affect taste.
+            bitter, umami, sour, and sweet.</p>
+        <p>Each taste, accompanied by corresponding music, shape, and colors, was projected upon a flavorless jelly or rice cake. The participant was asked to taste the food whilst listening to music, smelling a scent through a diffuser, and looking at textual descriptors.</p>
+        <p>Based on psychology research by Charles Spence.</p>
+    </div>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">      
+        <!-- Full-width images with number -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="../images/taste/taste 1.JPG" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="../images/taste/taste 2.JPG" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="../images/taste/taste 3.JPG" style="width:100%">
+        </div>
+
+    <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- The dots/circles -->
+    <div class="slide-dots" style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+    <!--proj line by line-->
+    <div class="proj-imgs landscape">
+        <div>
+            <p>For a “sweet” taste, the subject saw hues of red projected onto a white, organically-shaped piece of rice cake which was placed on a white circle. For sound, a light string melody was played and the subject smelled a combination of almond and frankincense through a diffuser. All of these sensory elements, which corresponded with general perceptions of sweetness, were designed to influence the subject’s tasting of a piece of tasteless food.</p>
+            <p>click on image to play corresponding sound sound</p>
+            <a onclick="play('sweet')">
+                <img src="../images/taste/sweet.JPG">
+            </a>
+        </div>
+        <div>
+            <p>savory</p>
+            <a onclick="play('savory')">
+                <img src="../images/taste/savory.JPG">
+            </a>
+        </div>
+        <div>
+            <p>sour</p>
+            <a onclick="play('sour')">
+                <img src="../images/taste/sour.JPG">
+            </a>
+        </div>
+        <div>
+            <p>bitter</p>
+            <a onclick="play('bitter')">
+                <img src="../images/taste/bitter.JPG">
+            </a>
+        </div>
+    </div>
+    <audio id="sweet" src="../audio/sweet.m4a"></audio>
+    <audio id="savory" src="../audio/salty.m4a"></audio>
+    <audio id="bitter" src="../audio/bitter.m4a"></audio>
+    <audio id="sour" src="../audio/sour.m4a"></audio>
+
+    <nav class="back">
+        <a href="../index.html">go back</a>
+    </nav>
+    <script src="../script.js"></script>
+    <script src="../slideshow.js"></script>
+</body>

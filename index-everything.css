@@ -7,7 +7,6 @@
 a {
     text-decoration: none;
     color: white;
-    cursor: pointer;
 }
 :root {
     --butter: rgb(252, 245, 201);
@@ -92,15 +91,15 @@ a {
     font-family: "Space Grotesk";
     color: var(--med);
 }
-nav button {
-    font-family: "B612 Mono" !important;
-}
-.more {
+nav {
     font-family: "Space Grotesk";
+}
+nav button {
+    font-family: "B612 Mono" !important; 
 }
 .filters button {
     font-family: "B612 Mono";
-    color: white;
+    color: var(--butter);
 }
 .contact a {
     color: var(--med);
@@ -151,19 +150,20 @@ nav button {
 
 /* || filter */
 
-.filters button {
+.filter {
     border: none;
     outline: none;
     background: none;
     cursor: pointer;
-    padding: 1vh 0 1vh 1vw;
-    color: var(--med);
+    padding: 10px;
 }
 .filter:hover {
     color: var(--lt);
 }
 .filter.active {
-    color: var(--butter);
+    /* color: var(--med); */
+    border: 2px solid var(--lt);
+    border-radius: 30px;
 }
 .button-group:after {
     content: '';
@@ -177,7 +177,7 @@ nav div {
 }
 .contact {
     position: fixed;
-    right: 2vw;
+    right: 1vw;
 }
 /*align right*/
 .contact.more {
@@ -220,33 +220,32 @@ nav div {
         float: right;
     }
     .project p {
-        margin-top: .5rem;
+        margin-top: .8rem;
         float: right;
         margin-right: 1rem;
     }
     .name {
         font-size: 1em; 
         position: fixed;
-        left: 4vw;
+        left: 5vw;
         top: 3vh;
     }
     .filters {
         display: grid;
         position: fixed;
-        padding: 40vh 4vw;
+        padding: 40vh 2vw;
         /*right: 0;
         justify-items: end;*/
         justify-items: start;
         z-index: 10;
     }
-    .filters button {
-        font-size: 1em;
+    .filter {
+        margin-bottom: 1em;
     }
-
     .bringup.about {
         position: fixed;
         bottom: 2vh; 
-        left: 4vw;
+        left: 3vw;
     }
     .contact {
         bottom: 2vh;
@@ -280,30 +279,31 @@ nav div {
 /* || desktop */
 @media screen and (min-width: 992px) {
     .grid {
-        width: 80vw;
-        margin-left: 18vw;
-        margin-top: 10vh;
+        width: 88vw;
+        margin: 20vh auto 0 10vw;
     }
     .grid-item, .grid-sizer {
-        width: 25%;
+        width: 10%;
     }
     /* .grid-item.small {
         width: 15%
     } */
     .grid-item {
-        margin-bottom:10vh;
+        margin-bottom: 10vh;
     }
     .project p {
-        font-size: .9rem;
         margin-top: .5rem;
         float: right;
+        color: var(--butter);
+        font-size: .8em;
+        z-index: 20;
     }
     .name {
-        font-size: 1.4em; 
+        font-size: 1.6rem; 
         position: fixed;
-        left: 2vw;
-        top: 5vh;
-        rotate: -10deg;
+        left: 1vw;
+        top: 4vh;
+        transform: rotate(-10deg);
     }
     /* .name2 {
         font-size: 3rem;
@@ -313,26 +313,28 @@ nav div {
         rotate: -10deg;
     } */
     .filters {
-        display: grid;
+        display: inline-block;
         position: fixed;
-        padding: 40vh 1vw;
+        right: 1vw;
+        top: 1vh;
+        padding-left: 2vw;
         /*right: 0;
         justify-items: end;*/
         justify-items: start;
-    
+        z-index: 10;
     }
     .filter {
-        margin-bottom: 0rem;
+        margin-bottom: .3rem;
         font-size: 1rem;
     }
 
     .bringup.about {
         position: fixed;
-        bottom: 15px; 
-        left: 2vw;
+        bottom: 1vh; 
+        left: 1vw;
     }
     .contact {
-        bottom: 15px;
+        bottom: 1vh;
     }
     .more {
         position: fixed;
@@ -358,7 +360,7 @@ nav div {
 
     }
     .bop.icon {
-        font-size: 5rem;
+        font-size: 3rem;
     }
     .bop.icon p {
         font-size: 1rem;

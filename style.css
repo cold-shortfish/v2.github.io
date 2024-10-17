@@ -653,7 +653,7 @@ nav div {
     .name {
         font-size: 1.4em; 
         position: fixed;
-        left: 3vw;
+        left: 2vw;
         top: 5vh;
         rotate: -10deg;
     }

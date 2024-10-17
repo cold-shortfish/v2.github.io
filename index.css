@@ -7,6 +7,7 @@
 a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 :root {
     --butter: rgb(252, 245, 201);
@@ -77,11 +78,24 @@ a {
     z-index: 5;
     text-shadow: 0px 0px 10px white, 0px 0px 2px white;
 }
+.name2 {
+    font-family: "B612 Mono", monospace;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--butter);
+    z-index: 5;
+    text-shadow: 0px 0px 20px white, 0px 0px 4px white;
+    text-align: center;
+}
 .project p {
     font-family: "Space Grotesk";
     color: var(--med);
 }
-nav {
+nav button {
+    font-family: "B612 Mono" !important;
+}
+.more {
     font-family: "Space Grotesk";
 }
 .filters button {
@@ -137,20 +151,19 @@ nav {
 
 /* || filter */
 
-.filter {
+.filters button {
     border: none;
     outline: none;
     background: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 1vh 0 1vh 1vw;
+    color: var(--med);
 }
 .filter:hover {
     color: var(--lt);
 }
 .filter.active {
-    /* color: var(--med); */
-    border: 2px solid var(--lt);
-    border-radius: 30px;
+    color: var(--butter);
 }
 .button-group:after {
     content: '';
@@ -207,32 +220,33 @@ nav div {
         float: right;
     }
     .project p {
-        margin-top: .8rem;
+        margin-top: .5rem;
         float: right;
         margin-right: 1rem;
     }
     .name {
         font-size: 1em; 
         position: fixed;
-        left: 5vw;
+        left: 4vw;
         top: 3vh;
     }
     .filters {
         display: grid;
         position: fixed;
-        padding: 40vh 2vw;
+        padding: 40vh 4vw;
         /*right: 0;
         justify-items: end;*/
         justify-items: start;
         z-index: 10;
     }
-    .filter {
-        margin-bottom: 1em;
+    .filters button {
+        font-size: 1em;
     }
+
     .bringup.about {
         position: fixed;
         bottom: 2vh; 
-        left: 3vw;
+        left: 4vw;
     }
     .contact {
         bottom: 2vh;
@@ -268,34 +282,48 @@ nav div {
     .grid {
         width: 80vw;
         margin-left: 18vw;
-        margin-top: 6vh;
+        margin-top: 10vh;
     }
     .grid-item, .grid-sizer {
         width: 25%;
     }
+    /* .grid-item.small {
+        width: 15%
+    } */
     .grid-item {
         margin-bottom:10vh;
     }
     .project p {
-        margin-top: .8rem;
+        font-size: .9rem;
+        margin-top: .5rem;
+        float: right;
     }
     .name {
         font-size: 1.4em; 
         position: fixed;
-        left: 3vw;
+        left: 2vw;
         top: 5vh;
         rotate: -10deg;
     }
+    /* .name2 {
+        font-size: 3rem;
+        position: fixed;
+        top: 5vh;
+        left: 3vw;
+        rotate: -10deg;
+    } */
     .filters {
         display: grid;
         position: fixed;
-        padding: 30vh 2vw;
+        padding: 40vh 1vw;
         /*right: 0;
         justify-items: end;*/
         justify-items: start;
+    
     }
     .filter {
-        margin-bottom: .3rem;
+        margin-bottom: 0rem;
+        font-size: 1rem;
     }
 
     .bringup.about {

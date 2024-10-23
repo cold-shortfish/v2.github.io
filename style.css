@@ -126,7 +126,7 @@ nav {
     margin-bottom: .6rem;
     line-height: 1.2;
 }
-.frame-object p {
+.frame p {
     font-family: "Space Grotesk";
     font-weight: 100;
 }
@@ -273,6 +273,7 @@ nav {
     padding: 8px 12px;
     position: absolute;
     top: 0;
+    z-index: 5;
 }
 
 /* The dots/bullets/indicators */
@@ -545,7 +546,7 @@ nav div {
         margin-bottom: 3vh;
         /*scroll-snap-align: center;*/
     }
-    .frame-object p {
+    .frame p {
         margin-bottom: 1vh;
     }
     /* .frame-object iframe {
@@ -562,6 +563,10 @@ nav div {
     }
     .slideshow-container {
         max-width: 90vw;
+    }
+    .slideshow-container.ver {
+        max-width: 90vw;
+        margin: 0;
     }
     .mySlides.verhor {
         position: relative;
@@ -816,19 +821,25 @@ nav div {
 
     .frame {
         margin-top: 12vh;
-        margin-left: 5vw;
+        margin-left: 3vw;
         /*
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
         max-height: 100vh;*/
     }
+    .frame p {
+        margin-bottom: 1vh;
+        padding: 0 1vw 1vh;
+    }
     .frame-object {
         margin-bottom: 10vh;
         /*scroll-snap-align: center;*/
+        display: flex;
     }
     .frame-object p {
         margin-bottom: 1vh;
         padding: 0 1vw 1vh;
+        display: block;
     }
     /* .frame-object iframe {
         height: 65vh;
@@ -877,12 +888,21 @@ nav div {
     .slideshow-container {
         max-width: 80vw;
     }
+    .slideshow-container.ver {
+        /* flex-grow: 1; */
+        width: 30vw;
+    }
     .mySlides.verhor {
         position: relative;
         overflow: hidden;
         height: 80vh;
     }
-    .mySlides.verhor img {
+     .mySlides.ver {
+        position: relative;
+        overflow: hidden;
+        height: 65vh;
+    }
+    .mySlides.verhor, .mySlides.ver img {
         /* centre the image */
         position: absolute;
         top: 50%;
@@ -890,6 +910,7 @@ nav div {
         transform: translate(-50%, -50%);
         height: 100%;
     }
+   
     /* BOP */
     .bop.icon {
         font-size: 5rem;
